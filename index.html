@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+      <!-- Google Fonts  -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+        rel="stylesheet"
+      />
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container-logo-and-icono-menu">
+        <!-- ICONO DE MENU -->
+        <div class="container-icon-menu">
+          <img src="./images/icon-menu.svg" alt="icono-menu" />
+        </div>
+
+        <!-- LOGO SNEAKER -->
+        <figure class="container-logo">
+          <img src="./images/logo.svg" alt="logo-sneaker" class="logo" />
+        </figure>
+
+        <!-- MENU -->
+        <nav class="container-menu">
+          <figure class="container-close-icon">
+            <img src="./images/icon-close.svg" alt="icono de cerrar" />
+          </figure>
+          <ul class="menu">
+            <li class="menu-item"><a href="">Collections</a></li>
+            <li class="menu-item"><a href="./men.html">Men</a></li>
+            <li class="menu-item"><a href="">Women</a></li>
+            <li class="menu-item"><a href="">About</a></li>
+            <li class="menu-item"><a href="">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- ICONS -->
+      <div class="container-icons">
+        <figure class="container-icon-cart">
+          <img src="./images/icon-cart.svg" alt="icon-cart" class="icon-cart" />
+          <p class="counter-products"></p>
+        </figure>
+        <span class="name-user"></span>
+        <figure class="container-image-avatar">
+          <img
+            src="./images/image-avatar.png"
+            alt="avatar"
+            class="image-avatar"
+          />
+        </figure>
+      </div>
+      <!-- Modal del user para cerrar sesión -->
+       <section class="modal-user">
+        <ul class="option-user">
+          <li class="item-option">Cerrar Sesión</li>
+        </ul>
+       </section>
+    </header>
+
+    <main>
+      <!-- Todos los Productos -->
+      <section class="container-all-products">
+      </section>
+
+      <!-- info del producto dentro de la lista del carrito -->
+      <section class="card-basket-products">
+        <h3 class="title-cart-basket">Cart</h3>
+        <ul class="basket-product"></ul>
+        <button class="btn-checkout"><a href="./login.html">Checkout</a></button>
+      </section>
+    </main>
+
+    <footer>
+      <p>Realizado por Estefania Delgado Hoyos</p>
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >
+      <figure class="container-github-icon">
+        <img src="./images/icon-github.svg" alt="GitHub" />
+      </figure>
+    </footer>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

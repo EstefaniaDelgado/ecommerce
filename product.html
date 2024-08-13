@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | E-commerce product page</title>
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/product.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container-logo-and-icono-menu">
+        <!-- ICONO DE MENU -->
+        <div class="container-icon-menu">
+          <img src="./images/icon-menu.svg" alt="icono-menu" />
+        </div>
+
+        <!-- LOGO SNEAKER -->
+        <figure class="container-logo">
+          <a href="./index.html">
+          <img src="./images/logo.svg" alt="logo-sneaker" class="logo" />
+        </a>
+        </figure>
+
+        <!-- MENU -->
+        <nav class="container-menu">
+          <figure class="container-close-icon">
+            <img src="./images/icon-close.svg" alt="icono de cerrar" />
+          </figure>
+          <ul class="menu">
+            <li class="menu-item"><a href="./index.html">Collections</a></li>
+            <li class="menu-item"><a href="/men.html">Men</a></li>
+            <li class="menu-item"><a href="">Women</a></li>
+            <li class="menu-item"><a href="">About</a></li>
+            <li class="menu-item"><a href="">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- ICONS -->
+      <div class="container-icons">
+        <figure class="container-icon-cart">
+          <img src="./images/icon-cart.svg" alt="icon-cart" class="icon-cart" />
+          <p class="counter-products"></p>
+        </figure>
+        <span class="name-user"></span>
+        <figure class="container-image-avatar">
+          <img
+            src="./images/image-avatar.png"
+            alt="avatar"
+            class="image-avatar"
+          />
+        </figure>
+      </div>
+      
+      <!-- Modal del user para cerrar sesión -->
+       <section class="modal-user">
+        <ul class="option-user">
+          <li class="item-option">Cerrar Sesión</li>
+        </ul>
+       </section>
+    </header>
+
+
+    <main>
+      <!-- Imagen principal -->
+      <figure class="container-main-product-sneakers">
+        <img
+          src="./images/image-product-1.jpg"
+          alt="sneakers"
+          class="main-product-sneakers"
+        />
+        <figure class="container-icons-like">
+          <img
+            src="./images/heartUnfilled.png"
+            alt="corazon sin color"
+            width="30px"
+            class="unfilled-heart"
+          />
+          <img
+            src="./images/heartFilled.png"
+            alt="corazon rojo"
+            width="30px"
+            class="filled-heart"
+          />
+        </figure>
+
+        <figure class="container-icons-next-previous">
+          <img
+            src="./images/icon-previous.svg"
+            alt="icono de antes"
+            class="icon-previous"
+            id="btnPrev"
+          />
+          <img
+            src="./images/icon-next.svg"
+            alt="icono de despues"
+            class="icon-next"
+            id="btnNext"
+          />
+        </figure>
+
+        <div class="container-images">
+          <figure class="container-image">
+            <img
+              src="./images/image-product-1-thumbnail.jpg"
+              alt="image-one"
+              class="image-one"
+            />
+          </figure>
+          <figure class="container-image">
+            <img
+              src="./images/image-product-2-thumbnail.jpg"
+              alt="image-two"
+              class="image-two"
+            />
+          </figure>
+          <figure class="container-image">
+            <img
+              src="./images/image-product-3-thumbnail.jpg"
+              alt=""
+              class="image-three"
+            />
+          </figure>
+          <figure class="container-image">
+            <img
+              src="./images/image-product-4-thumbnail.jpg"
+              alt="image-four"
+              class="image-four"
+            />
+          </figure>
+        </div>
+      </figure>
+
+      <!-- info del producto -->
+      <article class="container-info">
+        <h4 class="second-header">Sneaker Company</h4>
+        <h1 class="main-header">Fall Limited Edition Sneakers</h1>
+        <p class="info-text">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+
+        <div class="container-prices">
+          <div>
+            <span class="discount-price">$125.00 </span>
+            <span class="percentage"> 50% </span>
+          </div>
+          <div><span class="full-price">$250.00</span></div>
+        </div>
+
+        <div class="container-amount-products">
+          <div class="amount">
+            <img
+              src="./images/icon-minus.svg"
+              alt="icon-plus"
+              class="icon-minus"
+            />
+            <span class="number-product">0</span>
+            <img
+              src="./images/icon-plus.svg"
+              alt="icon-plus"
+              class="icon-plus"
+            />
+          </div>
+          <button class="btn-add-cart">
+            <img
+              src="./images/icon-cart.svg"
+              alt="icono carrito"
+              class="icon-cart"
+            />Add to cart
+          </button>
+        </div>
+      </article>
+
+      
+      <!-- info del producto dentro de la lista del carrito -->
+      <section class="card-basket-products">
+        <h3 class="title-cart-basket">Cart</h3>
+        <ul class="basket-product"></ul>
+        <button class="btn-checkout"><a href="./login.html">Checkout</a></button>
+      </section>
+
+      <!-- Imagen del producto dentro del modal -->
+      <section class="slider">
+        <figure class="container-icon-close">
+          <img src="./images/icon-close.svg" alt="icono de cierre">
+        </figure>
+        <figure class="container-slider">
+        <div class="container-slider-active">
+          <img
+            src="./images/image-product-1.jpg"
+            alt="sneakers"
+            class="slider-active"
+            id="0"
+          />  
+
+          <figure class="container-icons-move">
+            <img
+              src="./images/icon-previous.svg"
+              alt="icono de antes"
+              id="prevBtn"
+            />
+            <img
+              src="./images/icon-next.svg"
+              alt="icono de despues"
+              id="nextBtn"
+            />
+          </figure>
+        </div>
+          
+          <div class="container-images-slider">
+            <figure class="container-image-slider">
+              <img
+                src="./images/image-product-1-thumbnail.jpg"
+                alt="image-one"
+                class="image-one thumbnail"
+                data-index="0"
+              />
+            </figure>
+            <figure class="container-image">
+              <img
+                src="./images/image-product-2-thumbnail.jpg"
+                alt="image-two"
+                class="image-two thumbnail"
+                data-index="1"
+              />
+            </figure>
+            <figure class="container-image">
+              <img
+                src="./images/image-product-3-thumbnail.jpg"
+                alt=""
+                class="image-three thumbnail"
+                data-index="2"
+              />
+            </figure>
+            <figure class="container-image">
+              <img
+                src="./images/image-product-4-thumbnail.jpg"
+                alt="image-four"
+                class="image-four thumbnail"
+                data-index="3"
+              />
+            </figure>
+          </div>
+        </figure>
+      </section> 
+     
+    </main>
+
+    <footer>
+      <p>Realizado por Estefania Delgado Hoyos</p>
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >
+      <figure class="container-github-icon">
+        <img src="./images/icon-github.svg" alt="GitHub" />
+      </figure>
+    </footer>
+
+    <script src="./js/script-product.js"></script>
+  </body>
+</html>

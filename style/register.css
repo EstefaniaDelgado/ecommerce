@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: hsl(26, 100%, 55%);
+    --border-lines: hsl(220, 14%, 75%);
+}
+
+body{
+    font-family: "Kumbh Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card-login{
+    width: 70%;
+    max-width: 297px;
+    /* height: 60vh;
+    max-height: 300px; */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px;
+}
+
+.header{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 1rem 0 0;
+    letter-spacing: 1px;
+}
+
+.container-inputs{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 15px;
+}
+
+.input{
+    height: 30px;
+    width: 80%;
+    max-width: 238px;
+    font-family: inherit;
+    border: none;
+    border-bottom: 1px solid var(--border-lines);
+}
+
+.input:focus {
+    outline: none;
+    border: 2px solid var(--primary-color); 
+  }
+
+.msj-name, .msj-email, .msj-password{
+    display: none;
+    font-size: .7rem;
+    text-align: center;
+}
+  
+
+.btn-sign-up{
+    margin: 0 auto;
+    padding: .5rem 0;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: 600;
+    width: 80%;
+    max-width: 238px;
+}
+
+.btn-sign-up a{
+    text-decoration: none;
+    color: #333;
+}
+
+.info-login{
+    text-align: center;
+    padding: .5rem 0 1.5rem;
+}
+
+
+.info-login a{
+    color: #333;
+}
+
+@media(min-width:768px){
+    body{
+        font-size: 1.2rem;
+    }
+
+    .input, .btn-sign-up{
+        font-size:1rem;
+    }
+
+    .header{
+        font-size: 1.8rem;
+    }
+}

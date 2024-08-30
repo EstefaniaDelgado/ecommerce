@@ -63,6 +63,9 @@ const productsArr = [
 
 window.addEventListener('load', () => {
   const USER = 'user';
+  const LIKED_PRODUCTS = 'liked_products';
+  let liked = JSON.parse(localStorage.getItem(LIKED_PRODUCTS)) || [];
+  const user = JSON.parse(localStorage.getItem(USER)) || {};
 
   /*--- DESPLEGAR EL MENU Y CERRARLO EN MOBILE-----> */
 
@@ -110,6 +113,7 @@ window.addEventListener('load', () => {
   function showProductsInCart() {
     const iconCart = document.querySelector('.icon-cart');
     const btnCheckout = document.querySelector('.btn-checkout');
+   
 
     iconCart.addEventListener('click', () => {
       const modalCard = document.querySelector('.card-basket-products');
@@ -132,6 +136,19 @@ window.addEventListener('load', () => {
   }
   showProductsInCart();
   /* ----------------------------------------------------------> */
+
+  function reDireccion(){
+    const link = document.querySelector('.re-direccion')
+    console.log(link.hasAttribute('href'))
+    console.log("este es el link: ", link)
+    if(Object.keys(user).length){
+      link.setAttribute("href", "./invoice.html") 
+    }else{
+      link.setAttribute("href", "./login.html") 
+    }
+    
+  }
+  reDireccion()
 
   // ------------CONTENIDO DE LA LISTA EN EL CARRITO-------
   const showInfo = (product) => {
@@ -187,13 +204,11 @@ window.addEventListener('load', () => {
 
     //2. Traer el array de productos, iterar y generar la estructura HTML con la info de cada prod que es un obj dentro del array, llamar a la funcion debajo para la estructa
 
-    // cardProduct.innerHTML = '';
+    cardProduct.innerHTML = '';
 
     productsArr.forEach(
       (prod) => (cardProduct.innerHTML += showInfoEachProduct(prod))
     );
-
- 
   }
   showProductInCard();
 
@@ -231,9 +246,7 @@ window.addEventListener('load', () => {
   }
 
   //----------------DAR LIKE O NO A UN PRODUCTO--------------------
-  const LIKED_PRODUCTS = 'liked_products';
-  let liked = JSON.parse(localStorage.getItem(LIKED_PRODUCTS)) || [];
-
+  
   function likedProduct() {
     const iconsHeart = document.querySelectorAll('.heart');
 
@@ -250,14 +263,20 @@ window.addEventListener('load', () => {
       heart.addEventListener('click', () => {
         if (heart.getAttribute('src') === './images/heartUnfilled.png') {
           heart.setAttribute('src', './images/heartFilled.png');
-          stateHeart = './images/heartFilled.png';
           const findProduct = productsArr.find((prod) => prod.id === heartId);
+          console.log(findProduct);
+          findProduct.liked = true;
           liked.push(findProduct);
         } else {
           heart.setAttribute('src', './images/heartUnfilled.png');
+          const findProduct = productsArr.find((prod) => prod.id === heartId);
+          findProduct.liked = false;
+          console.log('en el segundo if unfilled', findProduct);
           liked = liked.filter((item) => item.id !== Number(heartId));
         }
         localStorage.setItem(LIKED_PRODUCTS, JSON.stringify(liked));
+        user.likedProducts = liked;
+        localStorage.setItem(USER, JSON.stringify(user));
       });
     }
   }
@@ -265,17 +284,14 @@ window.addEventListener('load', () => {
 
   //-------------MOSTRAR INFO USER-------------------
 
-  const user = JSON.parse(localStorage.getItem(USER));
-  console.log(user);
-
   function showInfoUser() {
     const nameUser = document.querySelector('.name-user');
     const avatarUser = document.querySelector('.container-image-avatar');
     const modalUser = document.querySelector('.modal-user');
     const closeSesion = document.querySelector('.option-user');
 
-    if (user) {
-      nameUser.innerText = `!Hola, ${user.name}`;
+    if (user && user.name) {
+      nameUser.innerText = `!Hola, ${user.name}!`;
       avatarUser.addEventListener('click', () => {
         modalUser.classList.toggle('active-modal-user');
         closeSesion.addEventListener('click', () => {

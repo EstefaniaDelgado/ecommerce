@@ -170,6 +170,8 @@ main{
    
 }
 
+
+
 .container-main-product-sneakers {
     position: relative;  
 }
@@ -460,6 +462,11 @@ footer{
 
     /* <---------MAIN----------> */
 
+    .container-main-product-sneakers{
+        width: 70%;
+        margin: 0 auto;
+    }
+
     .container-info{
         width: 70%;
     }
@@ -486,6 +493,10 @@ footer{
         align-items: center;
         margin: 2rem auto;
         flex: 1;
+    }
+
+    .container-product-detail{
+      display: flex;
     }
 
     .container-main-product-sneakers{

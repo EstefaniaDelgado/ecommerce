@@ -169,6 +169,7 @@ main{
     flex-direction: column;
     margin-bottom: 1rem;
     flex: 1;
+    position: relative;
 }
 
 .container-all-products{
@@ -277,7 +278,6 @@ main{
     position: absolute;
     left: calc(50% - 175.5px);
     right: calc(50% - 175.5px);
-    top: calc(70% - 175.5px);
     z-index: 1000;
 }
 
@@ -351,13 +351,14 @@ footer{
     /* <-------HEADER-----------> */
     header{
      width: 90%;
-     margin: 0 auto 1rem;
+     margin: 0 auto;
     }
 
     /* <-------------MAIN------------> */
     main{
         width: 75%;
-        margin: 1rem auto;
+        margin: 0 auto;
+        padding: 1rem 0;
     }
 
     .main-product-sneakers{
@@ -411,8 +412,9 @@ footer{
     }
 
     .active-card-basket{
-        left: calc(80% - 175.5px);
-        top: 10%;     
+        right: 0;
+        left: auto;
+        top: 0;
     }
 
     .container-all-products{

@@ -5,7 +5,7 @@ window.addEventListener('load', () => {
   const name = document.querySelector('#name');
   const email = document.querySelector('#email');
   const password = document.querySelector('#pass');
-  const btnSendInfo = document.querySelector('.send-info');
+  
 
   const USERS = 'users';
   const USER ='user';
@@ -19,6 +19,7 @@ window.addEventListener('load', () => {
       email: '',
       password: '',
       image: '',
+      likedProducts:[],
     };
 
     user.name = name.value;
@@ -48,7 +49,7 @@ window.addEventListener('load', () => {
         name.value = '';
         email.value = '';
         password.value = '';
-        window.location.href = "index.html"
+        window.location.href = "invoice.html"
       }
       localStorage.setItem(USERS, JSON.stringify(infoUsers));
       console.log(infoUsers)

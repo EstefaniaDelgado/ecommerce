@@ -79,6 +79,136 @@ window.addEventListener('load', () => {
     console.log(menu);
   });
 
+  //-----------TRAER EL DETALLE DEL PRODUCTO-------------------
+
+  const idProduct = window.location.search.slice(4);
+  const containerDetail = document.querySelector('.container-product-detail')
+  console.log(containerDetail)
+
+  function getDetailProduct(idProduct) {
+    const findProduct = productsArr.find(
+      (prod) => prod.id === Number(idProduct)
+    );
+    containerDetail.innerHTML = strutureDetailProduct(findProduct);
+    console.log('encontre el producto!!🤩', findProduct);
+    
+  }
+  getDetailProduct(idProduct);
+
+  function strutureDetailProduct(product) {
+console.log(product)
+    return `
+    <figure class="container-main-product-sneakers">
+        <img
+          src="./images/image-product-1.jpg"
+          alt="sneakers"
+          class="main-product-sneakers"
+        />
+        <figure class="container-icons-like">
+          <img
+            src="./images/heartUnfilled.png"
+            alt="corazon sin color"
+            width="30px"
+            class="unfilled-heart"
+          />
+          <img
+            src="./images/heartFilled.png"
+            alt="corazon rojo"
+            width="30px"
+            class="filled-heart"
+          />
+        </figure>
+
+        <figure class="container-icons-next-previous">
+          <img
+            src="./images/icon-previous.svg"
+            alt="icono de antes"
+            class="icon-previous"
+            id="btnPrev"
+          />
+          <img
+            src="./images/icon-next.svg"
+            alt="icono de despues"
+            class="icon-next"
+            id="btnNext"
+          />
+        </figure>
+
+        
+        <div class="container-images">
+          <figure class="container-image">
+            <img
+              src="./images/image-product-1-thumbnail.jpg"
+              alt="image-one"
+              class="image-one"
+            />
+          </figure>
+          <figure class="container-image">
+            <img
+              src="./images/image-product-2-thumbnail.jpg"
+              alt="image-two"
+              class="image-two"
+            />
+          </figure>
+          <figure class="container-image">
+            <img
+              src="./images/image-product-3-thumbnail.jpg"
+              alt=""
+              class="image-three"
+            />
+          </figure>
+          <figure class="container-image">
+            <img
+              src="./images/image-product-4-thumbnail.jpg"
+              alt="image-four"
+              class="image-four"
+            />
+          </figure>
+        </div>
+      </figure>
+      <article class="container-info">
+        <h4 class="second-header">Sneaker Company</h4>
+        <h1 class="main-header">Fall Limited Edition Sneakers</h1>
+        <p class="info-text">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+
+        <div class="container-prices">
+          <div>
+            <span class="discount-price">$125.00 </span>
+            <span class="percentage"> 50% </span>
+          </div>
+          <div><span class="full-price">$250.00</span></div>
+        </div>
+
+        <div class="container-amount-products">
+          <div class="amount">
+            <img
+              src="./images/icon-minus.svg"
+              alt="icon-plus"
+              class="icon-minus"
+            />
+            <span class="number-product">0</span>
+            <img
+              src="./images/icon-plus.svg"
+              alt="icon-plus"
+              class="icon-plus"
+            />
+          </div>
+          <button class="btn-add-cart">
+            <img
+              src="./images/icon-cart.svg"
+              alt="icono carrito"
+              class="icon-cart"
+            />Add to cart
+          </button>
+        </div>
+      </article>
+      `
+  }
+
   /* AUMENTAR O DISMINUIR EL NUMERO DE LA CANTIDAD DE PRODUCTOS */
   const iconPlus = document.querySelector('.icon-plus');
   const iconMinus = document.querySelector('.icon-minus');
@@ -250,22 +380,10 @@ window.addEventListener('load', () => {
     }
   });
 
-  //-----------TRAER EL DETALLE DEL PRODUCTO-------------------
+  
 
-  const idProduct = window.location.search.slice(4);
 
-  function getDetailProduct(idProduct) {
-    const findProduct = productsArr.find(
-      (prod) => prod.id === Number(idProduct)
-    );
-    console.log('encontre el producto!!🤩', findProduct);
-    strutureDetailProduct(findProduct);
-  }
-  getDetailProduct(idProduct);
 
-  function strutureDetailProduct(product) {
-    console.log('dentro de estructura', product);
-  }
 
   //-------------MOSTRAR INFO USER-------------------
 
@@ -280,7 +398,7 @@ window.addEventListener('load', () => {
     const closeSesion = document.querySelector('.option-user');
 
     if (user) {
-      nameUser.innerText = `!Hola, ${user.name}`;
+      nameUser.innerText = `!Hola, ${user.name}!`;
       avatarUser.addEventListener('click', () => {
         modalUser.classList.toggle('active-modal-user');
         closeSesion.addEventListener('click', () => {
@@ -342,8 +460,6 @@ window.addEventListener('load', () => {
   const thumbnails = document.querySelectorAll('.thumbnail');
   
 
- 
- 
   function updateSliderImage(index) {
     sliderImage.src = images[index];
 
